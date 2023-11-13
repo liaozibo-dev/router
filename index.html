@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Router</title>
+</head>
+<body>
+    <script>
+        routes = new Map()
+        routes.set('docs', 'https://pqiprsdeud7.feishu.cn/wiki/RfiMwer9ZiWhpIkrQZgc8i3Nnef')
+    </script>
+
+    <script>
+        function main() {
+            route(getRouteKey())    
+        }
+    </script>
+    
+    <script>
+        function getRouteKey() {
+            searchParams = new URLSearchParams(window.location.search)
+            if(searchParams.has('key')) {
+                return searchParams.get('key')
+            }
+        }
+
+        function route(key) {
+            target = routes.get(key)
+            if (target == undefined) {
+                document.write('unkonw route key for: ' + key)
+            } else {
+                window.location.href = target
+            }
+        }
+    </script>
+    
+    <script>
+        main()
+    </script>
+</body>
+</html>
